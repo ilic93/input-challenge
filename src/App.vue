@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <header>
+      <h1>Input Gallery</h1>
+      <p>Choose your input field or create one yourself</p>
+    </header>
+    <main>
+      <div>
+        <InputComp />
+      </div>
+      <div>
+        <!-- <InputComp class="md"/> -->
+      </div>
+    </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import InputComp from './components/InputComp.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    InputComp
   }
 }
 </script>
@@ -24,5 +35,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  padding: 10px;
+}
+
+.md input{
+  height: 2em;
+}
+
+header {
+  margin-bottom: 15px;
 }
 </style>
