@@ -3,14 +3,19 @@
     <div class="inputDiv">
       <code>Label</code>
       <div class="subInputDiv">
-        <input name="inputField" type="text" placeholder="Placeholder" minlength="5" class="md"/>
-        <textarea v-if="showTextarea" placeholder="Write something..." minlength="5" rows="4"></textarea>
-        <span v-if="showLeftIcon && !showTextarea" class="material-icons left">{{ newLeftIcon || 'call made'}}</span>
-        <span v-if="showRightIcon && !showTextarea" class="material-icons right">{{ newRightIcon || 'call made'}}</span>
+        <input name="inputField" type="text" placeholder="Placeholder" 
+        :minlength="errorLength || 5" 
+        :class="definedSize || 'md'" 
+        :disabled="disabledInput" 
+        :value="definedValue"
+        />
+        <textarea v-if="showTextarea || defaultTextarea" placeholder="Write something..." minlength="5" rows="4"></textarea>
+        <span v-if=" startIcon || showLeftIcon && !showTextarea" class="material-icons left">{{ newLeftIcon || 'call made'}}</span>
+        <span v-if=" endIcon || showRightIcon && !showTextarea" class="material-icons right">{{ newRightIcon || 'call made'}}</span>
       </div>
-      <p class="ht">{{ helpText }}</p>
+      <p class="ht">{{ interestingTxt || helpText }}</p>
     </div>
-    <button @click="toggleForm()">Customaze input</button>
+    <button v-if="customButton" @click="toggleForm()">Customaze input</button>
     <form v-if="activeForm" name="inputForm" @submit.prevent="updateInput()">
       <label>Disable input: </label>
       <input type="checkbox" name="disableCheck"/> 
@@ -61,6 +66,7 @@
 
 <script>
 export default {
+  props: ['customButton', 'errorLength', 'disabledInput', 'interestingTxt', 'startIcon', 'endIcon', 'definedValue', 'definedSize', 'defaultTextarea'],
   data() {
     return {
       activeForm: false,
@@ -70,8 +76,8 @@ export default {
       showFullWidth: false,
       showTextarea: false,
       newLeftIcon: '',
-      newRightIcon: ''
-    }
+      newRightIcon: '',
+      }
   },
   methods: {
     toggleForm() {
@@ -130,10 +136,9 @@ export default {
       } else {
         inputField.style.display = 'inline-block'
       }
-
-
     }
   }
+  
 }
 </script>
 
@@ -144,8 +149,8 @@ export default {
    padding-left: 10px;
  }
 
- input:hover, textarea:hover {border-color: black !important;}
- input:focus, textarea:focus {border-color: blue !important; outline: 0;}
+ input:hover, textarea:hover {border-color: black !important; cursor: pointer;}
+ input:focus, textarea:focus {border-color: blue !important; outline: 0; cursor: wait;}
  input:invalid, textarea:invalid {border-color: red !important; box-shadow: none;}
  input:disabled {cursor: not-allowed;} 
 
