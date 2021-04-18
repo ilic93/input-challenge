@@ -68,6 +68,7 @@
         <InputComp class="moveLeft default multiline" :defaultTextarea="true" />
       </div>
     </main>
+    <footer>Author: Marko Ilic</footer>
   </div>
 </template>
 
@@ -106,10 +107,6 @@ export default {
   padding: 10px;
 }
 
-.md input{
-  height: 2em;
-}
-
 header {
   margin-bottom: 15px;
 }
@@ -117,14 +114,29 @@ header {
 main > div, .inputWithHelpText > div, .inputWithIcons > div {overflow: hidden;}
 
 .inputWithHelpText > div,
-.inputWithIcons > div {float: left; margin-right: 10px; width: 45%;}
+.inputWithIcons > div {
+  float: left; 
+  margin-right: 10px; 
+  width: 45%;
+}
+
 .inputWithHelpText > div > code.galleryCode, .inputWithIcons > div > code.galleryCode, .inputWithSizes > div > code.galleryCode {width: 100%;}
 .inputWithHelpText .inputDiv, .inputWithIcons .inputDiv, .inputWithSizes .inputDiv  {float: left;}
 
-.inputWithSizes > div {float: left; margin-right: 10px; width: 30%;}
+.inputWithSizes > div {
+  float: left; 
+  margin-right: 10px; 
+  width: 30%;
+}
 
-.galleryCode {margin: 15px 0; font-size: 14px;}
-.moveLeft {float: left; clear: both;}
+.galleryCode {
+  margin: 15px 0; 
+  font-size: 14px;
+}
+
+.moveLeft {
+  float: left;
+}
 
 .errorInput input {border-color: red;}
 .errorInput input:hover {border-color: black !important;}
@@ -141,6 +153,4 @@ main > div, .inputWithHelpText > div, .inputWithIcons > div {overflow: hidden;}
 .fullWidthInput input {width: 95%;}
 
 .multiline input {display: none;}
-
-
 </style>

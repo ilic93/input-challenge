@@ -128,6 +128,7 @@ export default {
 
       const newColor = document.inputForm.inputColor.value
       inputField.style.borderColor = newColor
+      textareaField.style.borderColor = newColor
       document.querySelector('code').style.color = newColor
       document.querySelector('.ht').style.color = newColor
 
@@ -143,66 +144,70 @@ export default {
 </script>
 
 <style> 
- input, textarea {
-   border: 1px solid grey;
-   border-radius: 8px;
-   padding-left: 10px;
- }
+input, textarea {
+  border: 1px solid grey;
+  border-radius: 8px;
+  padding-left: 10px;
+}
 
- input:hover, textarea:hover {border-color: black !important; cursor: pointer;}
- input:focus, textarea:focus {border-color: blue !important; outline: 0; cursor: wait;}
- input:invalid, textarea:invalid {border-color: red !important; box-shadow: none;}
- input:disabled {cursor: not-allowed;} 
+input:hover, textarea:hover {border-color: black !important; cursor: pointer;}
+input:focus, textarea:focus {border-color: blue !important; outline: 0; cursor: wait;}
+input:invalid, textarea:invalid {border-color: red !important; box-shadow: none;}
+input:disabled {cursor: not-allowed;} 
 
- form {text-align: left; margin: 15px 35%; padding: 10px 5px; border: 3px solid lightblue; border-radius: 10px; }
- label {margin-right: 10px;}
+form {
+  text-align: left; 
+  margin: 15px 35%; padding: 10px 5px; border: 3px solid lightblue; border-radius: 10px; }
+label {margin-right: 10px;}
  
- .sm {
-   height: 2em;
- }
+.sm {
+  height: 2em;
+}
 
- .md {
-   height: 4em;
- }
+.md {
+  height: 4em;
+}
 
- .lg {
-   height: 6em;
- }
+.lg {
+  height: 6em;
+}
  
- code {display: block; font-size: 16px;}
- .ht {font-size: 14px;}
+code {display: block; font-size: 16px;}
+.ht {font-size: 14px;}
 
- .ht, code, .subInputDiv, textarea {
-   width: 240px;
-   margin: 0 auto;
-   text-align: left;
- }
+.ht, code, .subInputDiv, textarea {
+  width: 240px;
+  margin: 0 auto;
+  text-align: left;
+}
 
- .inputDiv {
-   margin-bottom: 15px;
- }
+.inputDiv {
+  margin-bottom: 15px;
+}
 
- .material-icons.left {position: absolute; left: 10px; width: 24px;}
- .material-icons.right {position: absolute; width: 24px; right: 10px;}
+.material-icons.left {position: absolute; left: 10px; width: 24px;}
+.material-icons.right {position: absolute; width: 24px; right: 10px;}
 
- .md ~ .material-icons.left, .md ~ .material-icons.right {padding: 19px 0;}
- .sm ~ .material-icons.left, .sm ~ .material-icons.right {padding: 4px 0;}
- .lg ~ .material-icons.left, .lg ~ .material-icons.right  {padding: 34px 0;}
+.md ~ .material-icons.left, .md ~ .material-icons.right {padding: 19px 0;}
+.sm ~ .material-icons.left, .sm ~ .material-icons.right {padding: 4px 0;}
+.lg ~ .material-icons.left, .lg ~ .material-icons.right  {padding: 34px 0;}
 
- .subInputDiv {position: relative; display: inline-block;}
+.subInputDiv {
+  position: relative; 
+  display: inline-block;
+}
 
- .inputWithLeftIcon {
-   padding-left: 40px;
- }
+.inputWithLeftIcon {
+  padding-left: 40px;
+}
 
- .fullWidth {
-   width: 100%;
- }
+.fullWidth {
+  width: 100%;
+}
 
- .subInputDivFull {
-   width: 90%;
- }
+.subInputDivFull {
+  width: 90%;
+}
 
- .subInputDivFull ~ .ht, .subInputDivFull ~ code {width: 90%;}
- 
+.subInputDivFull ~ .ht, .subInputDivFull ~ code {width: 90%;}
 </style>
